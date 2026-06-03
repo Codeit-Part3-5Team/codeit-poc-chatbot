@@ -1,4 +1,5 @@
 # codeit-poc-chatbot
+
 코드잇 파트3 5팀 중급 프로젝트 대비 프로토타입 Repo
 
 ​```
@@ -19,7 +20,7 @@
     │       │   ├── 05-test-results.md      ← 노수민 (PR로)
     │       │   ├── 06-risks-issues.md      ← 전민재 (PR로)
     │       │   ├── 07-poc-report.md        ← 전민재 (PR로)
-    |       |   └── 08-api-spec.md          ← 노수민 (PR로)
+    │       │   └── 08-api-spec.md          ← 노수민 (PR로)
     │       │
     │       ├── daily-reports/
     │       │   ├── .gitkeep
@@ -30,7 +31,7 @@
     │       ├── backend/                    ← 노수민 FastAPI 코드 (PR로)
     │       ├── frontend/                   ← 노수민 React 코드   (PR로)
     │       └── mobile/                     ← 노수민 React Native 코드 (PR로)
-    |
+    │
     └── 작업 브랜치들 (작업 끝나면 PR → merge → 브랜치 삭제):
         ├── docs/poc-plan          ← 전민재
         ├── docs/architecture      ← 노수민
