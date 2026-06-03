@@ -1,6 +1,7 @@
 # 시스템 아키텍처
 
 ## 1. 구성도
+
 ​```
 [사용자 브라우저]
        ↓ HTTPS
@@ -11,6 +12,7 @@
        ├→ [벡터 DB: FAISS / Chroma]
        └→ [세션 저장소: 인메모리 / Redis]
 ​```
+
 ## 2. 주요 흐름
 1. 사용자가 React UI에 질문 입력
 2. React → POST /chat → FastAPI
