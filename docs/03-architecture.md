@@ -1,8 +1,7 @@
 # 시스템 아키텍처
 
 ## 1. 구성도
-​```mermaid
-graph TD
+​```
 [사용자 브라우저]
        ↓ HTTPS
 [React Frontend (localhost:3000)]
