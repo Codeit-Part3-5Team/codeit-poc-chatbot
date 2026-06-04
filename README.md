@@ -11,6 +11,17 @@
     │   │
     │   └── 디렉토리 구조:
     │       ├── README.md
+    |       |   templates/ (양식 보관)
+    |       |   ├── 01-poc-plan.template.md          ← 전민재 (PR로)
+    |       |   ├── 02-requirements.template.md      ← 전민재 (PR로)
+    |       |   ├── 03-architecture.template.md      ← 노수민 (PR로)
+    |       |   ├── 04-test-scenarios.template.md    ← 공동   (PR로)
+    |       |   ├── 05-test-results.template.md      ← 노수민 (PR로)
+    |       |   ├── 06-risks-issues.template.md      ← 전민재 (PR로)
+    |       |   ├── 07-poc-report.template.md        ← 전민재 (PR로)
+    |       |   ├── 08-api-spec.template.md          ← 노수민 (PR로)
+    |       |   └── 2026-06-04.template.md           ← 노수민 (main 직접 push)
+    |       |
     │       ├── docs/
     │       │   ├── .gitkeep
     │       │   ├── 01-poc-plan.md          ← 전민재 (PR로)
