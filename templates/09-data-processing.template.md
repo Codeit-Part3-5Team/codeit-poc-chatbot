@@ -307,33 +307,66 @@
 
 ## 10. 부록 (Appendix)
 
-### A. 디렉토리 구조 (제안)
+### A. 디렉토리 구조(데이터 전처리 + 서비스 개발 챗봇 + RAG 시스템 합친 디렉토리 구조)
 ```
-bidmate-rag/
-├── data/                  # ⚠️ .gitignore (NDA)
-│   ├── raw/              # 원본 HWP, PDF
-│   ├── metadata/         # data_list.csv
-│   └── processed/        # 가공 데이터 (청크 JSON 등)
-├── src/
-│   └── 추후 논의 필요/
+chatbot/
+├── backend/    ← FastAPI (웹/앱 공통)
+|   ├── data/                 # ⚠️ .gitignore (NDA)
+│   |   ├── raw/              # 원본 HWP, PDF
+│   |   ├── metadata/         # data_list.csv
+│   |   └── processed/        # 가공 데이터 (청크 JSON 등)
+|   |
+|   ├── golden/ (data 폴더와 합칠지 따로 둘지 논의 필요)
+│   |   └── golden_dataset.json
+|   |
+│   ├── retrieval/
+│   │   ├── naive_retriever.py
+│   │   ├── agentic_retriever.py   # LangGraph 기반
+│   │   ├── embedder.py
+│   │   ├── vector_store.py
+│   │   └── loader.py
+|   |
+│   ├── generation/
+│   │   ├── generator.py
+│   │   ├── llm_client.py
+│   │   ├── memory.py
+│   │   └── prompts/
+│   │       ├── system_v1.txt
+│   │       └── system_v2.txt
+|   |
+│   ├── evaluation/
+│   │   ├── eval_retrieval.py     # Hit Rate, MRR, Context P/R
+│   │   ├── eval_generation.py    # Faithfulness, Answer Relevance
+│   │   ├── eval_ragas.py
+│   │   ├── eval_text.py          # ROUGE, BERTScore, BLEU
+│   │   └── llm_judge.py
+│   └── pipeline.py               # run_rag_pipeline(), get_ai_response()
+|
+├── frontend/   ← React 웹
+├── mobile/     ← React Native 앱
+|
+├── utils/
+│   └── config.py               # retriever_type, llm_model, top_k 등
 |
 ├── notebooks/
 │   ├── 01_EDA.ipynb
 │   ├── 02_loading_test.ipynb
 │   ├── 03_chunking_stats.ipynb
-│   └── 04_mapping_validation.ipynb
-|
-├── golden/ (data 폴더와 합칠지 따로 둘지 논의 필요)
-│   └── golden_dataset.json
+│   ├── 04_mapping_validation.ipynb
+│   ├── 05_naive_rag_test.ipynb
+│   ├── 06_agentic_rag_test.ipynb
+│   └── 07_evaluation.ipynb
 |
 ├── reports/
-│   ├── processing_report.md
-│   └── chunking_analysis.md
+|   ├── processing_report.md
+|   ├── chunking_analysis.md
+|   └── eval_report.md
 |
 ├── requirements.txt
 ├── .gitignore
 └── README.md
 ```
+
 
 ### B. 일일 체크리스트 템플릿
 ```markdown
