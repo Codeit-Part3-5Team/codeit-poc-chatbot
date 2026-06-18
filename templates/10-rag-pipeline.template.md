@@ -284,7 +284,7 @@
 [사용자 질문 + 컨텍스트 + GCP 서버 Ollama 모델 답변 생성] (e.g., Llama 3 8B)
    ↓ 
 OpenAI gpt-5-mini에게 다음 프롬프트로 평가 요청:
-"다음 질문에 대한 답변을 평가해줘.
+"다음 질문에 대한 GCP 서버 Ollama 모델 답변을 평가해줘.
  - Faithfulness (1~5): 컨텍스트에 충실한가?
  - Relevance (1~5): 질문에 적절한가?
  - Accuracy (1~5): 정확한가?
