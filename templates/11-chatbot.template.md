@@ -356,10 +356,18 @@ result = get_ai_response(
 
 ## 10. 부록 (Appendix)
 
-### A. 디렉토리 구조(서비스 개발 챗봇 + RAG 시스템 합친 디렉토리 구조)
+### A. 디렉토리 구조(데이터 전처리 + 서비스 개발 챗봇 + RAG 시스템 합친 디렉토리 구조)
 ```
 chatbot/
 ├── backend/    ← FastAPI (웹/앱 공통)
+|   ├── data/                 # ⚠️ .gitignore (NDA)
+│   |   ├── raw/              # 원본 HWP, PDF
+│   |   ├── metadata/         # data_list.csv
+│   |   └── processed/        # 가공 데이터 (청크 JSON 등)
+|   |
+|   ├── golden/ (data 폴더와 합칠지 따로 둘지 논의 필요)
+│   |   └── golden_dataset.json
+|   |
 │   ├── retrieval/
 │   │   ├── naive_retriever.py
 │   │   ├── agentic_retriever.py   # LangGraph 기반
@@ -390,12 +398,22 @@ chatbot/
 │   └── config.py               # retriever_type, llm_model, top_k 등
 |
 ├── notebooks/
-│   ├── 01_naive_rag_test.ipynb
-│   ├── 02_agentic_rag_test.ipynb
-│   └── 03_evaluation.ipynb
+│   ├── 01_EDA.ipynb
+│   ├── 02_loading_test.ipynb
+│   ├── 03_chunking_stats.ipynb
+│   ├── 04_mapping_validation.ipynb
+│   ├── 05_naive_rag_test.ipynb
+│   ├── 06_agentic_rag_test.ipynb
+│   └── 07_evaluation.ipynb
 |
-└── reports/
-    └── eval_report.md
+├── reports/
+|   ├── processing_report.md
+|   ├── chunking_analysis.md
+|   └── eval_report.md
+|
+├── requirements.txt
+├── .gitignore
+└── README.md
 ```
 
 ### B. 실행 명령어 (README용)
