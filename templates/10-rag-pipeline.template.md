@@ -281,15 +281,16 @@
 
 ### 7.3 LLM Judge 2단계 로직
 ```
-[사용자 질문]
-   ↓
-[1단계] GCP 서버 Ollama 모델 답변 생성 (e.g., Llama 3 8B)
+[사용자 질문 + 컨텍스트 + GCP 서버 Ollama 모델 답변 생성] (e.g., Llama 3 8B)
    ↓ 
-[2단계] OpenAI gpt-5-mini가 다음을 판정:
-   - Ollama 답변 vs Ground Truth 비교
-   - 점수(1~5) + 사유 출력
+OpenAI gpt-5-mini에게 다음 프롬프트로 평가 요청:
+"다음 질문에 대한 답변을 평가해줘.
+ - Faithfulness (1~5): 컨텍스트에 충실한가?
+ - Relevance (1~5): 질문에 적절한가?
+ - Accuracy (1~5): 정확한가?
+ 출력 형식: {scores: {...}, reasoning: '...'}"
    ↓
-[결과 저장] → 평가 로그
+JSON 점수 + 사유 반환
 ```
 
 ### 7.4 코드 품질 기준
