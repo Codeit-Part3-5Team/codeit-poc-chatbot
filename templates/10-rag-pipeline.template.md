@@ -28,22 +28,23 @@
 
 ✅ 코드잇 스프린트 주강사님 제안 하이브리드 구조 (Outer Graph + Inner Toggle)
 
+```
 [사용자 질문]
        ↓
 [LangGraph 에이전트 파이프라인 (바깥 껍데기)]
        ↓
    ┌─── Node: 질문 분석 ────┐
-   │                                                │
+   │                       │
    ├─── Node: RAG 검색 ─────┤  ← 여기서 config 토글!
-   │   ├ retriever_type:                      │     "naive_rag"  → Naive 함수 호출
-   │   └ retriever_type:                      │     "agentic_rag" → LangGraph 서브그래프 호출
-   │                                                │
+   │   ├ retriever_type:   │     "naive_rag"  → Naive 함수 호출
+   │   └ retriever_type:   │     "agentic_rag" → LangGraph 서브그래프 호출
+   │                       │
    ├─── Node: 답변 생성 ────┤
-   │                                                │
+   │                       │
    └─── Node: 검증 ─────────┘
        ↓
    [최종 답변]
-
+```
 
 ### 1.4 최종 목표 (Definition of Done)
 | # | 산출물 | 완료 기준 |
