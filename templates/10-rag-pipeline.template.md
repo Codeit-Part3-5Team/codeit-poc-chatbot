@@ -39,9 +39,11 @@
    │   ├ retriever_type:   │     "naive_rag"  → Naive 함수 호출
    │   └ retriever_type:   │     "agentic_rag" → LangGraph 서브그래프 호출
    │                       │
+   ├─── Node: 보안 처리 ────┤  ← 보안 취약점 개선 로직 실행 (예) 프롬프트 인젝션 등.
+   │                       │
    ├─── Node: 답변 생성 ────┤
    │                       │
-   └─── Node: 검증 ─────────┘
+   └─── Node: 검증 ─────────┘  ← LLM 모델 성능/평가 검증(예: LLM Judge) 또는 추가 할만한 에이전트 도구 기능 사용한 답변 검증인지 확인 필요
        ↓
    [최종 답변]
 ```
