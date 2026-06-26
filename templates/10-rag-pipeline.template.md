@@ -146,22 +146,22 @@
 
 **주의사항**
 - 심화 4 적용 후 평가 성능 저하 위험 발생 시 아래 옵션 사항 검토 필수!
-- 옵션 A: 시나리오별 메타필터 차별 적용
-single_doc: agency 필터 적용 (현재처럼 — 1.0 유지)
-multi_doc: 메타필터 약화 또는 OFF (recall↑ 우선)
-follow_up: agency 필터 유지 (1.0 유지)
+옵션 A: 시나리오별 메타필터 차별 적용
+- single_doc: agency 필터 적용 (현재처럼 — 1.0 유지)
+- multi_doc: 메타필터 약화 또는 OFF (recall↑ 우선)
+- follow_up: agency 필터 유지 (1.0 유지)
 
-- 옵션 B: multi_doc 전용 Multi-Query 도입 (권장)
+옵션 B: multi_doc 전용 Multi-Query 도입 (권장)
 multi_doc 약점 = "여러 문서 동시 검색 능력 부족"
 → Multi-Query가 본래 이 문제 해결용 기법
 → SDP의 심화 3에 명시된 기법 그대로 적용
 
-- 옵션 C: top_k 증가 (multi_doc에만)
-single_doc: top_k=5 (현재처럼)
-multi_doc: top_k=10 또는 15
+옵션 C: top_k 증가 (multi_doc에만)
+- single_doc: top_k=5 (현재처럼)
+- multi_doc: top_k=10 또는 15
 → 여러 문서 추출 가능성 ↑
 
-- 옵션 D: Hybrid Search (BM25 + Vector)
+옵션 D: Hybrid Search (BM25 + Vector)
 multi_doc 질문은 종종 구체적 사업명·기관명 포함
 → BM25(키워드)가 강점인 영역
 → 임베딩과 결합 시 multi_doc 개선 가능성
