@@ -143,8 +143,8 @@
 - 심화 3: Multi-Query 또는 Re-Ranking 중 **1종 선택 구현** (시간 부족 시 단일 선택)
 - 심화 4: 메타데이터 필터 확장 (예시: budget_amount, bid_end 같은 숫자/날짜 메타데이터)
 - Hybrid Search (BM25 + Vector)는 **백로그** (선택)
-
 - **주의사항 - 심화 4 적용 후 평가 성능 저하 위험 발생 시 아래 옵션 사항 검토 필수!**
+
 옵션 A: 시나리오별 메타필터 차별 적용
 - single_doc: agency 필터 적용 (현재처럼 — 1.0 유지)
 - multi_doc: 메타필터 약화 또는 OFF (recall↑ 우선)
