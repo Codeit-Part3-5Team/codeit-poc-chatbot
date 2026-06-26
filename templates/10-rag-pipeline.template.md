@@ -152,7 +152,7 @@
 - follow_up: agency 필터 유지 (1.0 유지)
 
 옵션 B: multi_doc 전용 Multi-Query 도입 (권장)
-multi_doc 약점 = "여러 문서 동시 검색 능력 부족"
+- multi_doc 약점 = "여러 문서 동시 검색 능력 부족"
 → Multi-Query가 본래 이 문제 해결용 기법
 → SDP의 심화 3에 명시된 기법 그대로 적용
 
@@ -162,7 +162,7 @@ multi_doc 약점 = "여러 문서 동시 검색 능력 부족"
 → 여러 문서 추출 가능성 ↑
 
 옵션 D: Hybrid Search (BM25 + Vector)
-multi_doc 질문은 종종 구체적 사업명·기관명 포함
+- multi_doc 질문은 종종 구체적 사업명·기관명 포함
 → BM25(키워드)가 강점인 영역
 → 임베딩과 결합 시 multi_doc 개선 가능성
 
