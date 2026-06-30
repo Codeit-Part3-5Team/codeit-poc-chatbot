@@ -175,7 +175,7 @@
 
 **평가 (Evaluation)**
 - Retrieval 지표: **Hit Rate**, **MRR**, Context Recall, Context Precision
-- Generation 지표: **Faithfulness**, **Answer Relevance**
+- Generation 지표: **Faithfulness**, **Answer Relevance**, *Answer Correctness*
 - 종합 지표: **RAGAS-Score**
 - 텍스트 품질: ROUGE-1, ROUGE-L, BERTScore-F1, BLEU
 - 골든 데이터셋 60건(데이터팀 제공) 활용
